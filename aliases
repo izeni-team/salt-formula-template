@@ -1,0 +1,7 @@
+function minion () {
+    docker-compose exec ubuntu "$@"
+}
+
+function master () {
+    docker-compose exec master "$@"
+}

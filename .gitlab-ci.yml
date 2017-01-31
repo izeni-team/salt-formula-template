@@ -1,0 +1,13 @@
+stages:
+  - test
+
+variables:
+  SUDO_ASKPASS: /usr/bin/ssh-askpass
+
+test:
+  tags:
+    - salt
+
+  script:
+    - sudo mkdir -p /srv/salt
+    - sudo salt-call --local state.sls template
