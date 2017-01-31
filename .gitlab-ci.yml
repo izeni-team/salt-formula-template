@@ -18,6 +18,6 @@ test:
     - apk add --update py2-pip
     - pip install docker-compose
     - docker-compose up -d
-    - sleep 2
-    - docker-compose run master bash -c "salt-key -A -y && salt '*' state.sls template"
+    - sleep 10
+    - docker-compose exec master bash -c "salt-key -A -y && salt '*' state.sls template"
     - docker-compose stop
